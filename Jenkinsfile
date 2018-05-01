@@ -16,16 +16,10 @@ pipeline {
         timeout(time: 30, unit: 'SECONDS')
       }
       input {
-        message 'Which Version?'
-        id 'Deploy'
-        parameters {
-          choice(name: 'APP_VERSION', choices: '''v1.1
-v1.2
-v1.3''', description: 'What to deploy?')
-        }
+        message 'Should we continue?'
       }
       steps {
-        echo "Deploying ${APP_VERSION}."
+        echo 'Continuing with deployment'
       }
     }
   }
